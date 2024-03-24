@@ -2,10 +2,12 @@
 # Bibliotecas Necessárias
 # ==================================================
 import pandas as pd
-import plotly_express as px
+import plotly
 import streamlit as st
 import numpy as np
 from PIL import Image
+
+pd.options.plotting.backend = "plotly"
 
 
 #-------------------------------------Início das Funções-----------------------------------
@@ -256,11 +258,30 @@ with tab3:
         
         st.info('**Temos duas visualizações quem cancelou (1) e quem não cancelou (0).**')
         
-        
-        for coluna in df.columns:
-            fig=px.histogram(df, x=coluna, color='cancelou', color_discrete_sequence=['red', 'blue'])  
-            st.plotly_chart(fig, use_container_width=True)  
-        
+         i=df.plot(kind='hist', x='idade', color='cancelou', color_discrete_sequence=['red', 'blue'])  
+        st.plotly_chart(i, use_container_width=True)    
+
+        s=df.plot(kind='hist', x='sexo', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(s, use_container_width=True) 
+        t=df.plot(kind='hist', x='tempo_como_cliente', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(t, use_container_width=True) 
+        f=df.plot(kind='hist', x='frequencia_uso', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(f, use_container_width=True) 
+        l=df.plot(kind='hist', x='ligacoes_callcenter', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(l, use_container_width=True) 
+        d=df.plot(kind='hist', x='dias_atraso', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(d, use_container_width=True) 
+        a=df.plot(kind='hist', x='assinatura', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(a, use_container_width=True) 
+        du=df.plot(kind='hist', x='duracao_contrato', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(du, use_container_width=True) 
+        to=df.plot(kind='hist', x='total_gasto', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(to, use_container_width=True) 
+        m=df.plot(kind='hist', x='meses_ultima_interacao', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(m, use_container_width=True) 
+        c=df.plot(kind='hist', x='cancelou', color='cancelou', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(c, use_container_width=True) 
+               
         st.info("**Na Proxima aba 'Análies dos Gráficos' temos as Análises referente aos gráficos e conclusão.**")    
 
 
@@ -272,14 +293,12 @@ with tab4:
         col1, col2=st.columns([1, 1])
         
         with col1:
-            dias_atraso=df.loc[:, ['dias_atraso', 'cancelou']]
-            fig=px.histogram(dias_atraso, x='dias_atraso', color='cancelou', color_discrete_sequence=['red', 'blue'])
-            st.plotly_chart(fig, use_container_width=True)
+            d=df.plot(kind='hist', x='dias_atraso', color='cancelou', color_discrete_sequence=['red', 'blue'])
+            st.plotly_chart(d, use_container_width=True)
             
         with col2:
-            lig_callcenter=df.loc[:, ['ligacoes_callcenter', 'cancelou']]
-            fig=px.histogram(lig_callcenter, x='ligacoes_callcenter', color='cancelou', color_discrete_sequence=['red', 'blue'])
-            st.plotly_chart(fig, use_container_width=True)    
+            l=df.plot(kind='hist', x='ligacoes_callcenter', color='cancelou', color_discrete_sequence=['red', 'blue'])
+            st.plotly_chart(l, use_container_width=True)     
 
         st.success(
         """
@@ -307,8 +326,7 @@ with tab4:
         with col1:
             st.markdown('#### Quantas pessoas não cancelaram e quantas cancelaram')
             
-            # lig_call=df[df['ligacoes_callcenter']<5]
-            # dias_atra=df[df['dias_atraso']<=20]
+        
             df=df[df['ligacoes_callcenter']<5]
             df=df[df['dias_atraso']<=20]
             
@@ -368,3 +386,5 @@ st.sidebar.subheader('Discord: jadson')
 st.sidebar.subheader('Linkedin: https://www.linkedin.com/in/jadson-nascimento-santos/')
 st.sidebar.subheader('GitHub: https://github.com/JadsonDS') 
 st.sidebar.subheader('Portfolio de Projetos: https://jadsonds.github.io/portfolio_projetos/')
+
+        
