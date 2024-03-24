@@ -258,9 +258,8 @@ with tab3:
         
         st.info('**Temos duas visualizações quem cancelou (1) e quem não cancelou (0).**')
         
-         i=df.plot(kind='hist', x='idade', color='cancelou', color_discrete_sequence=['red', 'blue'])  
-        st.plotly_chart(i, use_container_width=True)    
-
+        i=df.plot(kind='hist', x='idade', color='cancelou', color_discrete_sequence=['red', 'blue'])  
+        st.plotly_chart(i, use_container_width=True)   
         s=df.plot(kind='hist', x='sexo', color='cancelou', color_discrete_sequence=['red', 'blue'])
         st.plotly_chart(s, use_container_width=True) 
         t=df.plot(kind='hist', x='tempo_como_cliente', color='cancelou', color_discrete_sequence=['red', 'blue'])
