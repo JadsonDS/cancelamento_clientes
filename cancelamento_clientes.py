@@ -43,11 +43,11 @@ with tab1:
     """
     ## - Análise da base de dados
     <span style="font-size:22px;">
-    Vamor verificar as informações dos clientes e o percentual de cancelamento desses clientes. 
-    Como é um projeto de Análise, o objetivo vai ser fazer análises para ver onde temos os maiores cancelamentos e os motivos desses cancelamentos.
-    Com isso vamos poder propor uma solução para diminuir essa quantidade de cancelamentos.<br>
+    Vamos verificar as informações dos clientes e o percentual de cancelamento desses clientes. 
+    O objetivo do projeto vai ser fazer análises para verificar onde temos os maiores cancelamentos e os motivos desses cancelamentos.
+    Com isso vamos poder propor uma solução para diminuir essas quantidades de cancelamentos.<br>
     É importante fazer de fato uma análise de dados para que possa tirar conclusões utilizando os números como referência, sendo dentro de 
-    uma empresa um passo muito importante essa análise de dados para tomadas de decisões.<br>
+    uma empresa um passo muito importante essas análises de dados para tomadas de decisões.<br>
     Começamos com um percentual x de cancelamentos, mas ao longo da análise e tratamento dos dados, vamos notar que conseguimos reduzir drasticamente esse número só com essas análises.
     Então é uma solução que a empresa pode seguir para diminuir a quantidade de cancelamentos que está tendo.<br>
     Foi removido a coluna CustomerID da nossa base de dados, pois essa informação não é útil e não adiciona nada na nossa análise.
@@ -340,7 +340,7 @@ with tab4:
         
         st.success(
         """
-        ##### Removendo as informações dessas duas colunas.
+        ##### Removendo as informações dessas duas colunas temos.
         
         **Contagem dos Dados:**
         - Clientes que não cancelaram (0): Y
@@ -360,8 +360,8 @@ with tab4:
         st.markdown(
         """
         <span style="font-size:22px;">
-        - Começamos o problema com um taxa de cancelamento de 56,7%. Após o primeiro tratamento conseguimos diminuir um pouco e atingimos 46,1%. 
-        No final com ajuda dos gráficos conseguimos ajustar nossa base de dados e chegamos ao percentual de 18,4% em cancelamentos.<br><br>
+        - Começamos o problema com um taxa de cancelamento de 56,71%. Após o primeiro tratamento conseguimos diminuir um pouco e atingimos 46,05%. 
+        No final com ajuda dos gráficos conseguimos ajustar nossa base de dados e chegamos ao percentual de 18,40% em cancelamentos.<br><br>
         - Cada parte da nossa análise é fundamental para chegarmos no resultado que queremos. Nessa empresa já seria um avanço muito grande sair de 56% cancelamentos para 18% não é mesmo.
         Claro que podemos aprofundar mais as análises e diminuir ainda mais esse percentual, mas por motivos óbvios nunca vamos chegar em 0% de cancelamentos.<br><br>
         - Por isso é muito importante analisar os dados e verificar a viabilidade e não só pensar em chegar a 0% de cancelamentos, pois isso será impossível. Precisamos fazer isso de forma correta e
