@@ -2,13 +2,10 @@
 # Bibliotecas Necessárias
 # ==================================================
 import pandas as pd
-import plotly
+import plotly_express as px
 import streamlit as st
 import numpy as np
 from PIL import Image
-
-pd.options.plotting.backend = "plotly"
-
 
 #-------------------------------------Início das Funções-----------------------------------
 
@@ -258,28 +255,82 @@ with tab3:
         
         st.info('**Temos duas visualizações quem cancelou (1) e quem não cancelou (0).**')
         
-        i=df.plot(kind='hist', x='idade', color='cancelou', color_discrete_sequence=['red', 'blue'])  
-        st.plotly_chart(i, use_container_width=True)   
-        s=df.plot(kind='hist', x='sexo', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(s, use_container_width=True) 
-        t=df.plot(kind='hist', x='tempo_como_cliente', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(t, use_container_width=True) 
-        f=df.plot(kind='hist', x='frequencia_uso', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(f, use_container_width=True) 
-        l=df.plot(kind='hist', x='ligacoes_callcenter', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(l, use_container_width=True) 
-        d=df.plot(kind='hist', x='dias_atraso', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(d, use_container_width=True) 
-        a=df.plot(kind='hist', x='assinatura', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(a, use_container_width=True) 
-        du=df.plot(kind='hist', x='duracao_contrato', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(du, use_container_width=True) 
-        to=df.plot(kind='hist', x='total_gasto', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(to, use_container_width=True) 
-        m=df.plot(kind='hist', x='meses_ultima_interacao', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(m, use_container_width=True) 
-        c=df.plot(kind='hist', x='cancelou', color='cancelou', color_discrete_sequence=['red', 'blue'])
-        st.plotly_chart(c, use_container_width=True) 
+        idade=px.histogram(df, x='idade', color='cancelou', title='Gráfico por Idade', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(idade, use_container_width=True)
+        st.success("Podemos vizualizar que clientes com idade superior a 50 anos tendem a cancelar suas assinaturas.")
+        st.markdown('''___''')
+        
+        
+        sexo=px.histogram(df, x='sexo', color='cancelou', title='Gráfico por Sexo', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(sexo, use_container_width=True)
+        st.success(
+            """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas, os valores de cancelamento também
+            são muito parecidos. Não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+           
+           
+        tempo_cliente=px.histogram(df, x='tempo_como_cliente', color='cancelou', title='Gráfico por Tempo como Cliente', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(tempo_cliente, use_container_width=True)
+        st.success(
+            """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.
+            Não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+        
+        
+        freq_uso=px.histogram(df, x='frequencia_uso', color='cancelou', title='Gráfico por Frequência de Uso', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(freq_uso, use_container_width=True)
+        st.success(
+            """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.
+            Também não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+        
+        
+        lig_call=px.histogram(df, x='ligacoes_callcenter', color='cancelou', title='Gráfico por Ligacões ao Call Center', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(lig_call, use_container_width=True)
+        st.success("Podemos vizualizar que clientes com mais de 5 ligações ao call center cancelam suas assinaturas.")
+        st.markdown('''___''')
+        
+        
+        dias_atraso=px.histogram(df, x='dias_atraso', color='cancelou', title='Gráfico por Dias de Atraso', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(dias_atraso, use_container_width=True)
+        st.success("Podemos vizualizar que clientes com mais de 20 dias de atraso cancelam suas assinaturas.")
+        st.markdown('''___''')
+        
+        
+        assinatura=px.histogram(df, x='assinatura', color='cancelou', title='Gráfico por Assinatura', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(assinatura, use_container_width=True)
+        st.success(
+        """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.
+        Também não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+         
+          
+        durac_cont=px.histogram(df, x='duracao_contrato', color='cancelou', title='Gráfico por Duracão do Contrato', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(durac_cont, use_container_width=True)
+        st.success(
+        """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.
+        Também não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+         
+         
+        total_gasto=px.histogram(df, x='total_gasto', color='cancelou', title='Gráfico por Total Gasto', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(total_gasto, use_container_width=True)
+        st.success("Podemos vizualizar que clientes com gasto inferior a 500 cancelam suas assinaturas.")
+        st.markdown('''___''')
+         
+         
+        meses_ult_int=px.histogram(df, x='meses_ultima_interacao', color='cancelou', title='Gráfico por Meses de Ultima Interacão', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(meses_ult_int, use_container_width=True)
+        st.success(
+        """Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.
+        Também não podemos excluir nenhuma informação, pois os dados são praticamente iguais.""")
+        st.markdown('''___''')
+        
+        
+        cancelou=px.histogram(df, x='cancelou', color='cancelou', title='Gráfico por Cancelamento', color_discrete_sequence=['red', 'blue'])
+        st.plotly_chart(cancelou, use_container_width=True)
+        st.success("Podemos vizualizar que temos praticamente a mesma quantidade em cada uma das assinaturas.")
+        st.markdown('''___''')  
                
         st.info("**Na Proxima aba 'Análies dos Gráficos' temos as Análises referente aos gráficos e conclusão.**")    
 
