@@ -343,12 +343,12 @@ with tab4:
         col1, col2=st.columns([1, 1])
         
         with col1:
-            d=df.plot(kind='hist', x='dias_atraso', color='cancelou', color_discrete_sequence=['red', 'blue'])
-            st.plotly_chart(d, use_container_width=True)
+             dias_atraso=px.histogram(df, x='dias_atraso', color='cancelou', title='Gráfico por Dias de Atraso', color_discrete_sequence=['red', 'blue'])
+             st.plotly_chart(dias_atraso, use_container_width=True)
             
         with col2:
-            l=df.plot(kind='hist', x='ligacoes_callcenter', color='cancelou', color_discrete_sequence=['red', 'blue'])
-            st.plotly_chart(l, use_container_width=True)     
+             lig_call=px.histogram(df, x='ligacoes_callcenter', color='cancelou', title='Gráfico por Ligacões ao Call Center', color_discrete_sequence=['red', 'blue'])
+             st.plotly_chart(lig_call, use_container_width=True)    
 
         st.success(
         """
