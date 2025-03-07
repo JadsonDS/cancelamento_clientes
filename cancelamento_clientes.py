@@ -33,7 +33,7 @@ tab1, tab2, tab3, tab4=st.tabs(['🏠 Home', '🚫 Análises dos Cancelamentos',
 
 with tab1:
     with st.container():
-        st.write('# Projeto de Análise de Cancelamento de Clientes- Dashbord')
+        st.write('# Projeto de Análise de Cancelamento de Clientes de uma empresa de streaming- Dashbord')
        
 
     st.markdown(
