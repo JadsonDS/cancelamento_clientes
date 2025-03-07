@@ -3,7 +3,7 @@
 
 
 # 1. Problema de negócio
-O CEO recém contratado de uma renomada empresa com mais de 800 mil clientes. Recentemente a empresa percebeu que da sua base total de clientes, a maioria são clientes inativos, ou seja, que já cancelaram o serviço.
+O CEO recém contratado de uma renomada empresa de streaming com mais de 800 mil clientes. Recentemente a empresa percebeu que da sua base total de clientes, a maioria são clientes inativos, ou seja, que já cancelaram o serviço.
 
 Precisando melhorar seus resultados ela quer conseguir entender os principais motivos desses cancelamentos e quais as ações mais eficientes para reduzir esse número.
 . Ele nos pediu então para criarmos um dashboard utilizando alguns dados históricos, onde o mesmo poderia acompanhar e responder algumas importantes questões para o negócio.
